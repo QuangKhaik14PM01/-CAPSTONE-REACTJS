@@ -115,12 +115,12 @@ export default function Detail(props) {
                                 </Tabs>
                             </div>
                         </TabPane>
-                        <TabPane tab="Thông tin" key="2" style={{minHeight:300}}>
+                        {/* <TabPane tab="Thông tin" key="2" style={{minHeight:300}}>
                             Thông tin
                     </TabPane>
                         <TabPane tab="Đánh giá" key="3" style={{minHeight:300}}>
                             Đánh giá
-                    </TabPane>
+                    </TabPane> */}
                     </Tabs>
                 </div>
 

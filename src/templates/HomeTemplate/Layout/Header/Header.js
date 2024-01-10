@@ -16,23 +16,20 @@ export default function Header(props) {
 
     const { userLogin } = useSelector(state => state.QuanLyNguoiDungReducer);
 
-    const { t, i18n } = useTranslation();
+ 
 
 
-    const handleChange = (value) => {
-        i18n.changeLanguage(value)
-    }
-
+  
 
     const renderLogin = () => {
         if (_.isEmpty(userLogin)) {
             return <Fragment>
                 <button onClick={() => {
                     history.push('/login')
-                }} className="self-center px-8 py-3 rounded">{t('signin')}</button>
+                }} className="self-center px-8 py-3 rounded">{('Đăng nhập')}</button>
                 <button onClick={() => {
                     history.push('/register')
-                }} className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-coolGray-50">{t('register')}</button>
+                }} className="self-center px-8 py-3 font-semibold rounded bg-violet-600 text-coolGray-50">{('Đăng ký')}</button>
 
             </Fragment>
         }
@@ -52,8 +49,8 @@ export default function Header(props) {
     return (
         <header className="p-4 bg-coolGray-100 text-coolGray-800 bg-opacity-40 bg-black text-white fixed w-full z-10" >
             <div className="container flex justify-between h-16 mx-auto">
-                <NavLink to="/" aria-label="Back to homepage" className="flex items-center p-2">
-                    <img src="https://cyberlearn.vn/wp-content/uploads/2020/03/cyberlearn-min-new-opt2.png" alt="cyberlearn.vn" />
+            <NavLink to="/" aria-label="Back to homepage" className="flex items-center p-2">
+                    <img src="https://banner2.cleanpng.com/20180208/esw/kisspng-logo-film-clapperboard-this-cartoon-brand-popcorn-movie-tickets-5a7be73c731d53.0927722515180695644715.jpg" alt="" width='80vh' height='90vh'/>
                 </NavLink>
                 <ul className="items-stretch hidden space-x-3 lg:flex">
                     <li className="flex">
@@ -74,12 +71,7 @@ export default function Header(props) {
 
 
 
-                    <Select defaultValue="en" style={{ width: 100 }} onChange={handleChange}>
-                        <Option value="en">Eng</Option>
-                        <Option value="chi">Chi</Option>
-
-                        <Option value="vi">Vi</Option>
-                    </Select>
+                  
 
                 </div>
                 <button className="p-4 lg:hidden">
@@ -89,7 +81,7 @@ export default function Header(props) {
                 </button>
 
 
-                {/* {t('hello.2')} */}
+             
             </div>
         </header>
 
