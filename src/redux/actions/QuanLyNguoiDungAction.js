@@ -1,6 +1,7 @@
 import { quanLyNguoiDungService } from "../../services/QuanLyNguoiDung"
 import { DANG_NHAP_ACTION, SET_THONG_TIN_NGUOI_DUNG } from "./types/QuanLyNguoiDungType";
 import {history} from '../../App'
+import { DANG_KY_ACTION } from "./types/QuanLyNguoiDungType";
 
 
 
@@ -63,4 +64,23 @@ export const layThongTinNguoiDungAction = (thongTinDangNhap) => {
 
     }
 
+}
+
+export const dangKyAction = (thongTinDangKy) => {
+    return async (dispatch) => {
+        try {
+            const result = await quanLyNguoiDungService.dangKy(thongTinDangKy);
+
+            if (result.data.statusCode === 200) {
+                // Thực hiện các hành động khi đăng ký thành công (nếu cần)
+            
+                history.push('/login');
+            }
+
+            console.log('result', result);
+
+        } catch (error) {
+            console.log('error', error.response.data);
+        }
+    }
 }

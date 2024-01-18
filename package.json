@@ -2,7 +2,9 @@
   "name": "bc58-xemphim",
   "version": "0.1.0",
   "private": true,
-
+  "engines": {
+    "node": "16"
+  },
   "dependencies": {
     "@ant-design/icons": "^4.6.2",
     "@aspnet/signalr": "^1.0.27",
